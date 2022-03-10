@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html lang="en">
  <head>
  <title>小貓雜貨店</title>
@@ -22,9 +22,9 @@
  <script type="text/javascript">
 	 function showHint(str)
 	 {
-	 document.getElementById("order_status").innerHTML= '<img src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/loading01.gif" style="display:block; margin:auto;">';
-	 var xmlhttp;
-	 
+		var randomnum =	Math.round(Math.random() * (5 - 1)) + 1;
+	 	document.getElementById("order_status").innerHTML= '<img src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/loading0'+randomnum+'.gif" style="display:block; margin:auto;">';
+	 	var xmlhttp;
 			 if (window.XMLHttpRequest)
 			   {// code for IE7+, Firefox, Chrome, Opera, Safari
 			   xmlhttp=new XMLHttpRequest();
@@ -57,21 +57,13 @@
 									 {
 										 html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;"><button class="btn w-100" style="background-color: #fbbc04; color: #ffffff;"> '+obj[i].data[2]+'</button></a></div></div><hr>';
 									 }
-									 
-									 /*
-									 for(j=0;j<obj[i].data.length;j++)
-									 {
-									   html+= '<td>'+obj[i].data[j]+'</td>';
-									 }
-									 html  += '</div></div>';   
-									 */
 										  
 							 }
-							 //html+="</table>";
+			
 							 
 							 document.getElementById("order_status").innerHTML=html;
 							 if(obj.length==1) //只有一筆代表查不到資料
-									 alert('查無資料');
+									 alert('尚未開放');
 					   }
 	 
 			   }
@@ -81,6 +73,19 @@
 	 }
 	 </script>
  
+	 <script type="text/javascript">
+		function choosefilters(self)
+		{
+			var filtersarr = document.getElementsByName(self.name);
+			for(i=0 ; i<filtersarr.length ; i++)
+			{
+				filtersarr[i].className = 'nav-link';
+			}
+			self.className ='nav-link active';
+		}
+	 </script>
+
+
  <!---------------------------------------------------------------->
  
  
@@ -352,6 +357,8 @@
  </head>
  <body class="demo-header "  onload="showHint('0')">
  
+
+
  <style>
 	 .header {
 		 background-size: cover;
@@ -450,57 +457,57 @@
 			 </style>
  <div data-provide="shuffle">
  <ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter">
- <a class="nav-link active"  style="cursor: pointer;color: inherit;" onclick="showHint('0')">
+ <a class="nav-link active" name="filters"   style="cursor: pointer;color: inherit;" onclick="showHint('0') ;document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none'; choosefilters(this); ">
  ALL
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('料理')">
+ <a  class="nav-link " name="filters" style="cursor: pointer;color: inherit;" onclick="showHint('料理'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  料理
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('藥水')">
+ <a  class="nav-link "  name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('藥水'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  藥水
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('挖掘')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('挖掘'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  挖掘
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('伐木')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('伐木'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  伐木
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('狩獵')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('狩獵'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  狩獵
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('武器')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;"  onclick = "document.getElementById('arms').style.display='';choosefilters(this); document.getElementById('armor').style.display='none';">
  武器
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('防具')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick = "document.getElementById('armor').style.display='';choosefilters(this); document.getElementById('arms').style.display='none';">
  防具
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('寶石')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('寶石'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  寶石
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('寵物')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('寵物'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  寵物
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " style="cursor: pointer;color: inherit;" onclick="showHint('其他')">
+ <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('其他'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  其他
  </a>
  </li>
@@ -516,6 +523,111 @@
 		 </style>
  <br>
  </ul>
+
+ <ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter" style="display:none" id="arms" >
+	<a class="nav-link " name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('劍') ; choosefilters(this);">
+	劍
+	</a>
+	</li>
+	<li class="nav-item pl-1">
+	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('斧') ; choosefilters(this);">
+	斧
+	</a>
+	</li>
+	<li class="nav-item pl-1">
+	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('弓') ; choosefilters(this);">
+	弓
+	</a>
+	</li>
+	<li class="nav-item pl-1">
+	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('杖') ; choosefilters(this);">
+	杖
+	</a>
+	</li>
+	<li class="nav-item pl-1">
+	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('槍') ; choosefilters(this);">
+	槍
+	</a>
+	</li>
+	<li class="nav-item pl-1">
+	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('小刀') ; choosefilters(this);">
+	小刀
+	</a>
+	</li>
+	<li class="nav-item pl-1">
+	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('迴力鏢') ; choosefilters(this);">
+	迴力鏢
+	</a>
+	</li>
+	<style>
+				.filters-bar {
+					margin: auto;
+					background-color: #fff;
+					border-radius: 4px;
+					padding-top: 15px;
+					padding-bottom: 15px;
+					box-shadow: 1px 1px 14px -4px rgba(0, 0, 0, 0.4);
+				}
+			</style>
+	<br>
+	</ul>
+
+	<ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter" style="display:none" id="armor" >
+		<a class="nav-link "   name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('帽子') ; choosefilters(this);">
+		帽子
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('衣服') ; choosefilters(this);">
+		衣服
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('袍') ; choosefilters(this);">
+		袍
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('鞋子') ; choosefilters(this);">
+		鞋子
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('頭盔') ; choosefilters(this);">
+		頭盔
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('鎧甲') ; choosefilters(this);">
+		鎧甲
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('盾牌') ; choosefilters(this);">
+		盾牌
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('靴子') ; choosefilters(this);">
+		靴子
+		</a>
+		</li>
+		<style>
+					.filters-bar {
+						margin: auto;
+						background-color: #fff;
+						border-radius: 4px;
+						padding-top: 15px;
+						padding-bottom: 15px;
+						box-shadow: 1px 1px 14px -4px rgba(0, 0, 0, 0.4);
+					}
+				</style>
+		<br>
+		</ul>
+	
+	
+	 </br>
+
  </br>
  
  <!---搜尋欄位
@@ -535,116 +647,7 @@
  <p class="filter-count-text"></p>
  </div>
  </br>
- <script>
-			 //-------------------------------------------------------------------------------- 
-			 //<filters>                
-				 var multi = false;
-				 var template = "Single Filter";
- 
-				 l("filter template: " + template);
-				 l("Is filter multi: " + multi);
- 
-				 //<single filters>
-					 if(multi == false) {
- 
-						 if(template == "Dropdown") {
-							 $('select').on('change', function() {
-								 window.open("/api/v3/index.php/?key=1L3nBOko__5Xnjxag1W7cLOasDsajorWxzd4aiKxc6F0&filter=" + this.value, "_self");
-								 $('select').attr('disabled', true);
-							 });
-						 } else {
-							  $('.filter-button').on('click', function(event) {
-								  event.preventDefault();
-								 window.open("/api/v3/index.php/?key=1L3nBOko__5Xnjxag1W7cLOasDsajorWxzd4aiKxc6F0&filter=" + $(this).attr("data-filter"), "_self");
-								 $('.filter-button').addClass( "disabled" );
-							 });
-						 }
-					 }
-				  //</single filters>
- 
-				 //<multi filters>
-					 if(multi == true) {
- 
-						 allFilters = getAllSelectedSelects(template);
-						 buildUrlParams(allFilters);
- 
-						 //<on filter click change>
- 
-							 if(template == "Dropdown") {
-								 $('select').on('change', function() {
-									 allFilters = getAllSelectedSelects(template);
-									 //var url = updateUrl(buildUrlParams(allFilters));
-									 var url = buildUrlParams(allFilters);
-									 $('select').attr('disabled', true);
-									 openUrl(url);
-								 });
-							 } else {
-								 $('.filter-button').on('click', function(event) {
-								   event.preventDefault();
- 
-									 if($(this).hasClass( "active" )) {
-										 $(this).removeClass( "active" );
-									 } else {
-										 $(this).addClass( "active" );
-									 }
- 
-								   $('.filter-button').addClass( "disabled" );
- 
-								   allFilters = getAllSelectedSelects(template);
-								   var url = buildUrlParams(allFilters);
-								   openUrl(url);
-								 });
-							 }
- 
-						 //</on filter change>
-					 }
- 
-	
- 
-						 function buildUrlParams(allFilters) {
-							 var baseUrl = "/api/v3/index.php/?key=1L3nBOko__5Xnjxag1W7cLOasDsajorWxzd4aiKxc6F0&filter=";
- 
-							 var urlParams = "";
- 
-							 allFilters.forEach(function(item) {
-								 if(item != "") {                            
-									 urlParams = urlParams + item + "-and-";
-								 }
-							 });
- 
-							 urlParams = urlParams.substring(0, urlParams.length -5)
- 
-							 //var is_embed = "&e=";
- 
-							 url = baseUrl + urlParams + "";
-							 
-							 l("url: "); l(url);
-							 
-							 return (url);
-						 }
-					 //</buildUrlParams>
- 
-					 //<updateUrl>
-						 function updateUrl(url) {
-							window.history.pushState({}, window.document.title, url);
-						 }
-					 //</updateUrl>
- 
-					 function openUrl(url) {
-						 window.open(url, "_self");
-					 }
- 
-					 //<l>
-						 function l(s) {
-							 console.log(s);
-						 }
-					 //</l>
- 
-				 //</helper functions>
-			 //</filters>
-			 //--------------------------------------------------------------------------------
-			 </script>
- 
+
  <div id="order_status"></div>
  </div>
  </div>
@@ -742,170 +745,7 @@
 		 }
 		 window.addEventListener('message', adjustModalTop, false);
 	 </script>
- <script type="text/javascript">
-		 // <lazy load script>
- 
-				 // <load more>
-		 function loadMore() {
- 
-			 var minimumDataSize = 1.5; //kb
- 
-			 var baseUrl = "https://api.sheet2site.com";
- 
-			 var seletorAppend = "[data-shuffle='list']";
- 
-			 var cards_template_version = "new";
- 
-			 var dataSize = 0;
- 
-			 var is_limit_free_plan = ("1" == "1");
-			 var free_plan_cards_limit = 15;
-			 var next_load_length = 99;
-			 var force_load_length = false;
- 
-			 if (is_limit_free_plan){
-				 if ((99 * globalPage) > free_plan_cards_limit) {
-					 l('max cards: ' + 99 * globalPage);
-					 $("#load_more_btn").html('');
-					 $("#load_more_btn").replaceWith("<h3 style='text-align:center;'>Please subscribe to see everything</h3>");
-					 return;
-				 }
-				 // check if the next load will go beyond the free_plan_cards_limit, and if so, reduce the length of the next load
-				 if (((99 * globalPage) + 99) > free_plan_cards_limit) {
-					 next_load_length = free_plan_cards_limit - (99 * globalPage-1);
-					 force_load_length = true;
-				 }
-			 }
- 
-			 var url = baseUrl + "/api/v3/load_more" + cards_template_version + ".php/?key=1L3nBOko__5Xnjxag1W7cLOasDsajorWxzd4aiKxc6F0&template=Restaurant Template&filter=&search=&is_filter_multi=false&domain=&length=" + next_load_length + "&page=" + globalPage;
-			 if (force_load_length) url += "&force_length=1";
- 
-			 console.log("Load_more_url: " + url);
- 
-			 console.log("Loading next page: " + globalPage);
- 
-			 var tStart = performance.now()
- 
-			 $("#load_more_btn").html('Loading...');
-			  $("#load_more_btn").prop("disabled", true);
- 
-				$.get(url, function(data){
- 
-				 dataSize = fileSize(data);
- 
-					if (data != "end" && dataSize > minimumDataSize) {
-						timer("  Loaded: ", tStart);
- 
-						l("data: " + data);
- 
-						$("#load_more_btn").html('Load More');
-						$("#load_more_btn").prop("disabled", false);
- 
-					 // var seletorRemove = "[data-shuffle='item']";
-					 // $(seletorRemove).slice(0, length).remove();
- 
-					 if("Restaurant Template" == "Table Template" ) {
-						 $('#example').DataTable().destroy();
- 
-						 appnd(seletorAppend, data);
- 
-						 initTable();
- 
-						 globalPage = globalPage + 1;
- 
-						 l("globalPage changed to: " + globalPage);
-					 } else {
-						 appnd(seletorAppend, data);
- 
-						 globalPage = globalPage + 1;
- 
-						 l("globalPage changed to: " + globalPage);
-					 }
- 
- 
-					} else if (data == "end") {
-						//var el = "<p> End of content<p>";
-						//appnd(seletorAppend, el);
-						$("#load_more_btn").hide();
- 
-					} else {
-					 l("_______ Data size < " + minimumDataSize + " __________");
-					 l("data: size: " + dataSize);
-					 l("data: " + data)
-					 l("globalPage: " + globalPage)
-						
-					 $("#load_more_btn").html('Load More...');
-				 
-						$("#load_more_btn").prop("disabled", false);
-				 }
- 
-			 })
- 
-		 
- 
-		 }
-	 // </load more>
- 
- 
- 
- 
- 
-		 // -------------------------------------------------------------
-		 //<helpers>
- 
-			 // <initTable>
-				 function initTable() {
-					 l("Datatable initialized")
-					 $('#example').DataTable( {
-						 "responsive": true,
-						 "paging":   false,
-						 
-						 "ordering": true,
-						 "order": [],
-						 "info":     true,
-						 "autoWidth": true,
-						 "info": false,
-						 "searching": false,
-						 "language": {
-							 "search": "_INPUT_",
-							 "searchPlaceholder": ""
-							 }
-					 });
-				 }
-			 // </initTable>
- 
-			 // <appnd>
-				 function appnd(seletor, data) {
-					 var tStart = performance.now()
- 
-			
-						 var parent = document.querySelectorAll(seletor)[0];
-						 parent.insertAdjacentHTML('beforeend', data);
-				
-					 timer("  Appended: ", tStart);
-				 }
-			 // </appnd>
- 
-			 // <log>
-				 function l(t) {
-					 console.log(t);
-				 }
-	
-				 function fileSize(file) {
-					 var size = Math.round((encodeURI(file).split(/%..|./).length - 1) / 1024 );
-					 
-					 l("  Size: ~" + size + " kb");
- 
-					 return size;
- 
-				 }
-		
-				 function timer(text, start) {
-					 var stop = performance.now()
-						l(text + (stop - start)/1000 + " sec.")
-				
-	 </script>
- 
+
  <script type="text/javascript">
 
 		   $(window).scroll(function() {
@@ -1027,7 +867,8 @@
  <style>
 	 .super-button {display: block}
 	 </style>
- 
+
+
  </body>
  
  </html>
