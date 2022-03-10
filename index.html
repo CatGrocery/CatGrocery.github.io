@@ -42,7 +42,32 @@
 													 
 							 var html = '';//
 							 
-							 for (var i = 1; i < obj.length; i ++ ) {//
+							if(str=="寶石")
+							{
+								for (var i = 1; i < obj.length; i ++ ) 
+									{//
+									 html  +='<div class="row justify-content-center pb-4" data-shuffle="item" data-groups="pasta"><div class="col-lg-2 mx-auto text-left"><a  class="product-media" style="display: flex; justify-content: center;"><img loading="lazy" class="lazyload " style="width:100%; max-height: 200px; object-fit: contain; object-position: center " data-src="'+obj[i].data[1]+'" alt=""></a></div>';
+									 html  += '<div class="col-xs-12  col-lg-4 mx-auto"><h3> <a style="color: #fbbc04" >' + obj[i].data[0] + '</a></h3>';//
+									 html  +='<div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">價格: </b> <span class="extra-field-value">'+obj[i].data[4]+ '<span>';
+									 html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">武器效果: </b> <span class="extra-field-value">'+obj[i].data[5]+'<span>';
+									 html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">防具效果: </b> <span class="extra-field-value">'+obj[i].data[3]+'<span>';
+									 html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">現貨: </b> <span class="extra-field-value">'+obj[i].data[6]+'<span>'+'</div></div>';
+									 html  +='<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">'+obj[i].data[7]+'</div></div>';
+									 if(obj[i].data[2] == "立即購買")
+									 {
+										 html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" href="https://lin.ee/BNuxeQG"><button class="btn w-100" style="background-color: #fbbc04; color: #ffffff;"> '+obj[i].data[2]+'</button></a></div></div><hr>';
+									 }
+									 else
+									 {
+										 html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;"><button class="btn w-100" style="background-color: #fbbc04; color: #ffffff;"> '+obj[i].data[2]+'</button></a></div></div><hr>';
+									 }
+										  
+									}
+							}
+							else
+							{
+								for (var i = 1; i < obj.length; i ++ ) 
+									{//
 									 html  +='<div class="row justify-content-center pb-4" data-shuffle="item" data-groups="pasta"><div class="col-lg-2 mx-auto text-left"><a  class="product-media" style="display: flex; justify-content: center;"><img loading="lazy" class="lazyload " style="width:100%; max-height: 200px; object-fit: contain; object-position: center " data-src="'+obj[i].data[1]+'" alt=""></a></div>';
 									 html  += '<div class="col-xs-12  col-lg-4 mx-auto"><h3> <a style="color: #fbbc04" >' + obj[i].data[0] + '</a></h3>';//
 									 html  +='<div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">價格: </b> <span class="extra-field-value">'+obj[i].data[4]+ '<span>';
@@ -58,9 +83,8 @@
 										 html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;"><button class="btn w-100" style="background-color: #fbbc04; color: #ffffff;"> '+obj[i].data[2]+'</button></a></div></div><hr>';
 									 }
 										  
-							 }
-			
-							 
+									}
+							}
 							 document.getElementById("order_status").innerHTML=html;
 							 if(obj.length==1) //只有一筆代表查不到資料
 									 alert('尚未開放');
@@ -85,11 +109,14 @@
 		}
 	 </script>
 
+<!-------------------------------購物車系統------------------------------>
 
- <!---------------------------------------------------------------->
- 
- 
- 
+	 <script>
+		 var
+	 </script>
+
+<!------------------------------購物車系統------------------------------->
+
  <script>
 	   window.dataLayer = window.dataLayer || [];
 	   function gtag(){dataLayer.push(arguments);}
