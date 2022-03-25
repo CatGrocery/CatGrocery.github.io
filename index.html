@@ -62,17 +62,20 @@
 	
 	 </style>
  </head>
- <body class="demo-header "  onload="showHint('料理');EenterWeb();mobile();">
+ <body class="demo-header "  onload="webload();">
 
 
 <!-----------側邊選單(始)---------------->
 
 <div id="leftcanvas" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+	<img style="width: 180px; height: auto;" src="image/catstore.png">
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="最新消息" id="announcement"><b>最新消息</b></button>
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="商品一覽" id="buy"><b>商品一覽</b></button>
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="寵物一覽" id="pet"><b>寵物一覽</b></button>
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="魔幣購買" id="money"><b>魔幣購買</b></button>
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="精彩活動" id="activity"><b>精彩活動</b></button>
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="聯絡我們" id="contact"><b>聯絡我們</b></button>
+	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="留言版" id="message"><b>留言版</b></button>
 
 
 </div>
@@ -81,13 +84,13 @@
  
  <header id="maincanvas2" style="transition: 0.5s;" data-overlay="2"  loading="lazy" data-background-image="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/cover.jpg" class="lazyload t-white " >
 	
-	<input id="nav-toggle" type="checkbox">
+	<input id="nav-toggle" type="checkbox" >
 	<label for="nav-toggle" class="ham" onclick="openNav()">
 	  <div class="ham-origin" >
 		<div class="ham-bar ham-bar--top"></div>
 		<div class="ham-bar ham-bar--middle"></div>
 		<div class="ham-bar ham-bar--bottom"></div>
-		<div class="hamtext"><b id="hamtext">小貓雜貨店</b></div>
+		<div class="hamtext"><b id="hamtext">最新消息</b></div>
 	  </div>
 	</label>
 <div class="container mt-8 mb-8 text-center">
@@ -104,33 +107,77 @@
  
 
  <div id="maincanvas" style="transition: 0.5s;">
- <section class="section overflow-hidden">
- <div class="container-fluid">
- <div class="row gap-y align-items-center">
- <div class="col-md-5 mx-auto text-center">
- <a target="_blank" href="https://lin.ee/BNuxeQG">
- <img style="max-height: 300px;" src="https://qr-official.line.me/sid/M/068xzykb.png" alt="..." data-aos="fade-right">
- </a>
- </div>
- <div class="col-md-4 mx-auto">
- <h3>QR Code</h3>
- <br>
- <p>快來加入好友訂購吧！</p>
- <br>
- <a target="_blank" href="https://lin.ee/BNuxeQG">
- <button class="btn buttonsponoredsection px-8" style="background-color: #fbbc04; color: #ffffff;"> 加入好友
- </button>
- </a>
- </div>
- </div>
- </div>
- </section>
+ 
+
+<!--------------------最新公告---------------------------->
+<div class="container maincanva" id="canva-announcement">
+	<header class="section-header"></header>
+	<div data-provide="shuffle">
+	<div class="accordion shadow-5" data-shuffle="list" id="accordion-job">
+
+	<div class="w-100 jobboard-card-child" data-shuffle="item">
+	<h6  class="card-title">
+	<a data-toggle="collapse" class="d-flex align-items-center collapsed" href="#id-penne-all-arrabbiata">
+	<span class="mr-5">
+	<img loading="lazy" class="avatar avatar-s lazyloaded"  src="image/pet16.gif" alt="">
+	</span>
+	<span class="mr-auto w-60">
+	<strong style="font-size: 20px;">小貓雜貨店全新官網即將啟用</strong>
+	<br>
+	<small></small>
+	<br>
+	<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">站內公告</div>
+	</span>
+	<span class="jobboard-card-extra-fields-all " style="min-width: 70px">
+	<div style="color: #3a3a3a !important; text-align: right;" >
+	2022/3/25
+	</div>
+	
+	</span>
+	</a>
+	</h6>
+	<div id="id-penne-all-arrabbiata" class="collapse" data-parent="#accordion-job" >
+	<div class="card-body">
+	<p class="text-center">
+	<p class="announcement">小貓雜貨店全新官網即將啟用囉～<br>小貓雜貨店官網即將在2022/3/27晚上10:00正式啟用！</p>
+	</p>
+	</div>
+	</div>
+	</div>
 
 
+	</div>
+	</div>
+	</div>
 
+<!--------------------最新公告---------------------------->
 
+<!---------------------------------------------------------商品一覽(始)--------------------------------------------------------------->
+ <section class="section overflow-hidden maincanva" id="canva-buy" >
+<!---------------------------------------------------------加入好友訂購(始)--------------------------------------------------------------->
+	<section class="section overflow-hidden" style="margin-top: -60px;">
+		<div class="container-fluid">
+		<div class="row gap-y align-items-center">
+		<div class="col-md-5 mx-auto text-center">
+		<a target="_blank" href="https://lin.ee/BNuxeQG">
+		<img style="max-height: 300px;" src="https://qr-official.line.me/sid/M/068xzykb.png" alt="..." >
+		</a>
+		</div>
+		<div class="col-md-4 mx-auto">
+		<h3>QR Code</h3>
+		<br>
+		<p>快來加入好友訂購吧！</p>
+		<br>
+		<a target="_blank" href="https://lin.ee/BNuxeQG">
+		<button class="btn buttonsponoredsection px-8" style="background-color: #fbbc04; color: #ffffff;"> 加入好友
+		</button>
+		</a>
+		</div>
+		</div>
+		</div>
+		</section>
+<!---------------------------------------------------------加入好友訂購(末)--------------------------------------------------------------->
 
- <section class="section overflow-hidden" id="buy">
  <div class="container-fluid">
  <style>
 			   .selected-option-class {
@@ -147,52 +194,48 @@
  <div data-provide="shuffle">
  <ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter">
  <li class="nav-item pl-1">
- <a  class="nav-link active" name="filters" style="cursor: pointer;color: inherit; "  disabled='ture' onclick="showHint('料理'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link active" name="filters"  onclick="showHint('料理'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  料理
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link "  name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('藥水'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link "  name="filters"   onclick="showHint('藥水'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  藥水
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('挖掘'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link " name="filters"   onclick="showHint('挖掘'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  挖掘
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('伐木'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link " name="filters"   onclick="showHint('伐木'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  伐木
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('狩獵'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link " name="filters"   onclick="showHint('狩獵'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  狩獵
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;"  onclick = "document.getElementById('arms').style.display='';choosefilters(this); document.getElementById('armor').style.display='none';">
+ <a  class="nav-link " name="filters"    onclick = "document.getElementById('arms').style.display='';choosefilters(this); document.getElementById('armor').style.display='none';">
  武器
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick = "document.getElementById('armor').style.display='';choosefilters(this); document.getElementById('arms').style.display='none';">
+ <a  class="nav-link " name="filters"   onclick = "document.getElementById('armor').style.display='';choosefilters(this); document.getElementById('arms').style.display='none';">
  防具
  </a>
  </li>
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('寶石'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link " name="filters"   onclick="showHint('寶石'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  寶石
  </a>
  </li>
+
  <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('寵物'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
- 寵物
- </a>
- </li>
- <li class="nav-item pl-1">
- <a  class="nav-link " name="filters"  style="cursor: pointer;color: inherit;" onclick="showHint('道具'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
+ <a  class="nav-link " name="filters"   onclick="showHint('道具'); document.getElementById('arms').style.display='none'; document.getElementById('armor').style.display='none';choosefilters(this);">
  道具
  </a>
  </li>
@@ -210,37 +253,37 @@
  </ul>
 
  <ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter" style="display:none" id="arms" >
-	<a class="nav-link " name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('劍') ; choosefilters(this);">
+	<a class="nav-link " name="filters-arms"  onclick="showHint('劍') ; choosefilters(this);">
 	劍
 	</a>
 	</li>
 	<li class="nav-item pl-1">
-	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('斧') ; choosefilters(this);">
+	<a  class="nav-link "  name="filters-arms"  onclick="showHint('斧') ; choosefilters(this);">
 	斧
 	</a>
 	</li>
 	<li class="nav-item pl-1">
-	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('弓') ; choosefilters(this);">
+	<a  class="nav-link "  name="filters-arms"  onclick="showHint('弓') ; choosefilters(this);">
 	弓
 	</a>
 	</li>
 	<li class="nav-item pl-1">
-	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('杖') ; choosefilters(this);">
+	<a  class="nav-link "  name="filters-arms"  onclick="showHint('杖') ; choosefilters(this);">
 	杖
 	</a>
 	</li>
 	<li class="nav-item pl-1">
-	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('槍') ; choosefilters(this);">
+	<a  class="nav-link "  name="filters-arms"  onclick="showHint('槍') ; choosefilters(this);">
 	槍
 	</a>
 	</li>
 	<li class="nav-item pl-1">
-	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('小刀') ; choosefilters(this);">
+	<a  class="nav-link "  name="filters-arms"  onclick="showHint('小刀') ; choosefilters(this);">
 	小刀
 	</a>
 	</li>
 	<li class="nav-item pl-1">
-	<a  class="nav-link "  name="filters-arms" style="cursor: pointer;color: inherit;" onclick="showHint('迴力鏢') ; choosefilters(this);">
+	<a  class="nav-link "  name="filters-arms"  onclick="showHint('迴力鏢') ; choosefilters(this);">
 	迴力鏢
 	</a>
 	</li>
@@ -258,42 +301,42 @@
 	</ul>
 
 	<ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter" style="display:none" id="armor" >
-		<a class="nav-link "   name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('帽子') ; choosefilters(this);">
+		<a class="nav-link "   name="filters-armor"  onclick="showHint('帽子') ; choosefilters(this);">
 		帽子
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('衣服') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('衣服') ; choosefilters(this);">
 		衣服
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('袍') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('袍') ; choosefilters(this);">
 		袍
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('鞋子') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('鞋子') ; choosefilters(this);">
 		鞋子
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('頭盔') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('頭盔') ; choosefilters(this);">
 		頭盔
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('鎧甲') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('鎧甲') ; choosefilters(this);">
 		鎧甲
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('盾牌') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('盾牌') ; choosefilters(this);">
 		盾牌
 		</a>
 		</li>
 		<li class="nav-item pl-1">
-		<a  class="nav-link " name="filters-armor" style="cursor: pointer;color: inherit;" onclick="showHint('靴子') ; choosefilters(this);">
+		<a  class="nav-link " name="filters-armor"  onclick="showHint('靴子') ; choosefilters(this);">
 		靴子
 		</a>
 		</li>
@@ -352,9 +395,9 @@
 					<p class="lead-1 text-light p-0 m-0">
 					</p>
 					</div>
-					<div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: ; padding-left: 3px ;">
+					<div class="extra-fields-all"> <div class="extra-field" style=" padding-left: 3px ;">
 					<b class="extra-field-column-name">Price: </b> <span class="extra-field-value">20 EUR<span>
-					</span></span></div> <div class="extra-field" style="background-color: ; color: ; font-size: ; padding-left: 3px ;">
+					</span></span></div> <div class="extra-field" style=" padding-left: 3px ;">
 					<b class="extra-field-column-name">Description: </b> <span class="extra-field-value">With garlic, chili and tomato sauce. Choice of: Pasta or Gluten free pasta.<span>
 					</span></span></div></div>
 					</div>
@@ -404,16 +447,34 @@
  </div>
  </div>
  </section>
+<!---------------------------------------------------------商品一覽(末)--------------------------------------------------------------->
+
+
+
+<!-------------------------還沒完成------------------------->
+<section class="section overflow-hidden maincanva" id="canva-pet" style="text-align:center" ><b style="font-size: 50px;">暫未開放，敬請期待</b></section>
+<section class="section overflow-hidden maincanva" id="canva-money" style="text-align:center" ><b style="font-size: 50px;">暫未開放，敬請期待</b></section>
+<section class="section overflow-hidden maincanva" id="canva-activity" style="text-align:center" ><b style="font-size: 50px;">暫未開放，敬請期待</b></section>
+<section class="section overflow-hidden maincanva" id="canva-contact" style="text-align:center" ><b style="font-size: 50px;">暫未開放，敬請期待</b></section>
+<section class="section overflow-hidden maincanva" id="canva-message" style="text-align:center" ><b style="font-size: 50px;">暫未開放，敬請期待</b></section>
+
+
+
+
+
+
+
+<!---------------------------------------------------------底部加入好友(始)--------------------------------------------------------------->
  <section class="section overflow-hidden">
- <div class="container-fluid">
+
  <div class="row gap-y align-items-center">
  <div class="col-md-5 mx-auto text-center">
- <img style="max-height: 300px;" src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/pic1.jpg" alt="..." data-aos="fade-right">
+ <img style="max-height: 300px;" src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/pic1.jpg" alt="..." >
  </div>
  <div class="col-md-4 mx-auto">
  <h3>小貓雜貨店</h3>
  <br>
- <p>很棒喔！</p>
+ <p style="font-size: 15px;font-weight: 400;">我們不是工作室，<br>我們只是一群熱愛魔力的玩家，<br>同時也希望能讓魔力玩家能夠有更好的遊戲體驗~<br>歡迎有興趣的人找我們一起舉辦遊戲活動喔!!</p>
  <br>
  <a target="_blank" href="https://lin.ee/BNuxeQG">
  <button class="btn buttonsponoredsection px-8" style="background-color: #fbbc04; color: #ffffff;"> 馬上訂購
@@ -421,8 +482,9 @@
  </a>
  </div>
  </div>
- </div>
  </section>
+ <!---------------------------------------------------------底部加入好友(末)--------------------------------------------------------------->
+
  <div style="margin: 2rem;">
 
  </div>
@@ -496,7 +558,9 @@
 
  
 	 </script>
- <a href="https://lin.ee/BNuxeQG" class="super-button" target="_blank" data-title="馬上"></a>
+ <a href="https://lin.ee/BNuxeQG"  class="super-button" target="_blank"  >
+	 <img width="40px" height="40px" src="image/cart_icon.png">
+ </a>
  
 
 
