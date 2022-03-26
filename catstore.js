@@ -10,7 +10,7 @@ function showHint(str)
     if(NowBuyFilters != str)
     {
         ShowHintIteam = [];
-        if(str == "pet")
+        if(str == "寵物")
         {
     
         }
@@ -45,7 +45,7 @@ function showHint(str)
                                 
                             switch(str)
                             {
-                                case('gem'):
+                                case('寶石'):
                                 {
                                 for (var i = 1; i < obj.length; i ++ ) 
                                     {//
@@ -76,21 +76,21 @@ function showHint(str)
                                     break;
                                 }
                                 
-                                case ('sword'):
-                                case ('ax'):
-                                case ('bow'):
-                                case ('staff'):
-                                case ('spear'):
-                                case ('knife'):
-                                case ('boomerang'):
-                                case ('helmet'):
-                                case ('armor'):
-                                case ('shield'):
-                                case ('boots'):
-                                case ('cloth'):
-                                case ('robe'):
-                                case ('shoe'):
-                                case ('hat'):
+                                case ('劍'):
+                                case ('斧'):
+                                case ('弓'):
+                                case ('杖'):
+                                case ('槍'):
+                                case ('小刀'):
+                                case ('迴力鏢'):
+                                case ('頭盔'):
+                                case ('鎧甲'):
+                                case ('盾牌'):
+                                case ('靴子'):
+                                case ('衣服'):
+                                case ('袍'):
+                                case ('鞋子'):
+                                case ('帽子'):
                                     {
                                         for (var i = 1; i < obj.length; i ++ ) 
                                         {//
@@ -403,7 +403,7 @@ function openNav() {
             }
             document.getElementById(showCanva).style.display= "";
             NowCanva = self.id ;
-            //alert(NowCanva);
+            alert(NowCanva);
         }
         
     }
