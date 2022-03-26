@@ -58,7 +58,7 @@ function showHint(str)
                                         html  +='<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">'+obj[i].data[7]+'</div></div>';
                                         if(obj[i].data[2] == "立即購買")
                                         {
-                                            html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" ><button class="btn w-100" data-toggle="modal" data-target="#myModal" onclick="ShowModal()" style="background-color: #fbbc04; color: #ffffff;"> '+obj[i].data[2]+'</button></a></div></div><hr>';
+                                            html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" ><button class="btn w-100" data-toggle="modal" data-target="#myModal" onclick="ShowModal(this)" style="background-color: #fbbc04; color: #ffffff;" id="'+obj[i].data[9]+'">'+obj[i].data[2]+'</button></a></div></div><hr>';
                                         }
                                         else
                                         {
@@ -102,7 +102,7 @@ function showHint(str)
                                         html  +='<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">'+obj[i].data[7]+'</div></div>';
                                         if(obj[i].data[2] == "立即購買")
                                         {
-                                            html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" ><button class="btn w-100" data-toggle="modal" data-target="#myModal" onclick="ShowModal()" style="background-color: #fbbc04; color: #ffffff;"> '+obj[i].data[2]+'</button></a></div></div><hr>';
+                                            html  +='<div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" ><button class="btn w-100" data-toggle="modal" data-target="#myModal" onclick="ShowModal(this)" style="background-color: #fbbc04; color: #ffffff;" id="'+obj[i].data[9]+'">'+obj[i].data[2]+'</button></a></div></div><hr>';
                                         }
                                         else
                                         {
@@ -280,6 +280,33 @@ function ShowModal(btn)
 {
     //document.getElementById('intocart-title').innerHTML='超級大漢堡';
     var BtnId = btn.id;
+    for(i=1 ; i<ShowHintIteam.length ; i++)
+    {
+        if(ShowHintIteam[i][9] == BtnId)
+        {
+            if(ShowHintIteam[i][7] =="寶石")
+            {
+                document.getElementById("modal-title").innerHTML = ShowHintIteam[i][0];
+                document.getElementById("modal-image").src = "image/" +ShowHintIteam[i][1];
+                document.getElementById("modal-filters").innerHTML = ShowHintIteam[i][7];
+                document.getElementById("modal-price").innerHTML = ShowHintIteam[i][4];
+                document.getElementById("modal-remark-gem").innerHTML = "<b>武器效果 :</b>"  +ShowHintIteam[i][5] +"<br><b>防具效果 :</b>"  +ShowHintIteam[i][5] ;
+                document.getElementById("modal-remark").innerHTML ="";
+                document.getElementById("modal-spotgoods").innerHTML = ShowHintIteam[i][6];
+            }
+            else
+            {
+                document.getElementById("modal-title").innerHTML = ShowHintIteam[i][0];
+                document.getElementById("modal-image").src = "image/" +ShowHintIteam[i][1];
+                document.getElementById("modal-filters").innerHTML = ShowHintIteam[i][7];
+                document.getElementById("modal-price").innerHTML = ShowHintIteam[i][4];
+                document.getElementById("modal-remark").innerHTML = ShowHintIteam[i][5];
+                document.getElementById("modal-spotgoods").innerHTML = ShowHintIteam[i][6];
+            }
+            
+        
+        }
+    }
     
 }
 
@@ -388,7 +415,6 @@ function openNav() {
         }
         maincanvaChoose(document.getElementById('announcement'));
         //document.getElementById('buy').style.display= "none";
-
     }
 
     function maincanvaChoose(self)
