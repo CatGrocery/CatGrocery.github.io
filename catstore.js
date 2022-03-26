@@ -403,7 +403,7 @@ function openNav() {
             }
             document.getElementById(showCanva).style.display= "";
             NowCanva = self.id ;
-            alert(NowCanva);
+            \\alert(NowCanva);
         }
         
     }
