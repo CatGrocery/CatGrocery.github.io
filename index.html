@@ -41,12 +41,6 @@
 
 ------------------------------購物車系統------------------------------->
 
- <script>
-	   window.dataLayer = window.dataLayer || [];
-	   function gtag(){dataLayer.push(arguments);}
-	   gtag('js', new Date());
-	   gtag('config', 'UA-51392658-21');
-	 </script>
  <script type="text/javascript">
 		 //Global Variable
 		 var globalPage = 1;
@@ -76,6 +70,28 @@
 	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="精彩活動" id="activity"><b>精彩活動</b></button>
 	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="聯絡我們" id="contact"><b>聯絡我們</b></button>
 	<button class="sidenav-button" onclick="ClickSideNavBtn(this); maincanvaChoose(this);" value="留言版" id="message"><b>留言版</b></button>
+	
+
+	<div style="border-color:#fbbc04;">
+	<span>現在時間</span>
+	<div class="chart_sd y"><div id="clock_c"></div>
+	<div class="cweek"><strong><span></span></strong><i></i><em></em></div>
+	<div id="date_c"></div>
+	<script type="text/javascript">
+	function Appendzero(obj) {
+	if(obj<10) return "0" +""+ obj;
+	else return obj;
+	}
+	function changeClock() {
+	var d = new Date();
+	document.getElementById("date_c").innerHTML = Appendzero(d.getFullYear()) + "-" + Appendzero((d.getMonth() + 1)) + "-" + Appendzero(d.getDate());
+	document.getElementById("clock_c").innerHTML = Appendzero(d.getHours()) + ":" + Appendzero(d.getMinutes()) + ":" + Appendzero(d.getSeconds());
+	}
+	window.setInterval(changeClock, 1000);
+	</script>
+	</div>
+	</div>
+
 
 
 </div>
@@ -120,15 +136,13 @@
 <div class="container maincanva"  id="canva-announcement">
 	
 	<header class="section-header"></header>
+
+
+
 	<mat-card _ngcontent-xcq-c264="" appmaterialelevation="" class="mat-card mat-focus-indicator mat-elevation" style="background-color: rgb(255, 255, 255);">
 	<div data-provide="shuffle">
 	<div class="accordion shadow-5" data-shuffle="list" id="accordion-job">
 	<div id="announcement_status"></div>
-
-
-
-
-
 
 	</div>
 	</div>
@@ -175,6 +189,7 @@
 			   }
  
 			 </style>
+
 
  <div data-provide="shuffle">
  <ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter">
@@ -238,6 +253,7 @@
  </ul>
 
  <ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter" style="display:none" id="arms" >
+	<li class="nav-item pl-1">
 	<a class="nav-link " name="filters-arms" id="sword" onclick="showHint('劍') ; choosefilters(this);">
 	劍
 	</a>
@@ -286,6 +302,7 @@
 	</ul>
 
 	<ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter" style="display:none" id="armor" >
+		<li class="nav-item pl-1">
 		<a class="nav-link " id="hat"  name="filters-armor"  onclick="showHint('帽子') ; choosefilters(this);">
 		帽子
 		</a>
@@ -364,10 +381,10 @@
 					<div class="col-12">
 					<div class="image-wrapper float-left pr-5">
 					
-					<img loading="lazy" class="lazyloaded" style="max-width: 400px;  width:100%; max-height: 300px; " width="300px" id="modal-image" src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/props92.png">
+					<img loading="lazy" class="lazyloaded" style="max-width: 400px;  width:100%; max-height: 300px; " width="300px" id="modal-image" src="">
 					
 					<div class="pt-4 pb-0">
-					<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge" id="modal-filters">pasta</div>
+					<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge" id="modal-filters"></div>
 					</div>
 					</div>
 					<div class="single-post-content-wrapper">
@@ -379,35 +396,48 @@
 					<div class="extra-fields-all">
 					<div class="extra-field" style=" padding-left: 3px ;">
 					<b class="extra-field-column-name" >售價 : </b> 
-					<span class="extra-field-value" id="modal-price">20 EUR<span>
+					<span class="extra-field-value" id="modal-price"><span>
 					</span></span></div> 
 					<div class="extra-field" style=" padding-left: 3px ;">
 					<b class="extra-field-column-name" id="modal-remark-gem">備註 : </b> 
-					<span class="extra-field-value"id="modal-remark">With garlic, chili and tomato sauce. Choice of: Pasta or Gluten free pasta.<span>
+					<span class="extra-field-value"id="modal-remark"><span>
 					</span></span></div>
 					<div class="extra-field" style=" padding-left: 3px ;">
 					<b class="extra-field-column-name" >現貨 : </b> 
-					<span class="extra-field-value" id="modal-spotgoods">With garlic, chili and tomato sauce. Choice of: Pasta or Gluten free pasta.<span>
-					</span></span></div>
+					<span class="extra-field-value" id="modal-spotgoods"><span>
+						
+					</span></span></div></div>
 					</div>
 					</div>
+					<br>
+
+					<span>
+					<b text-align:center;>訂購數量</b><br>
+					<a class="product-media" style="cursor: pointer;" target="_blank" >
+						<button class="btn " style="background-color: #fbbc04; color: #ffffff;height: 35px" onclick="calculate('reduce','oder-num',10);">-10</button>
+						<button class="btn " style="background-color: #fbbc04; color: #ffffff;height: 35px" onclick="calculate('reduce','oder-num',1);">-1</button>
+						<input type="number"  ID="oder-num" style="width: 30%; height: 35px; border-color:#fbbc04;" oninput="if(value<0)value=0" value="0" onkeyup="Subtotal('Subtotal');">
+						<button class="btn " style="background-color: #fbbc04; color: #ffffff;height: 35px;" onclick="calculate('add','oder-num',1);">+1</button>
+						<button class="btn " style="background-color: #fbbc04; color: #ffffff;height: 35px" onclick="calculate('add','oder-num',10);">+10</button>
+					</a>
+
+					</span>
+					<h4 class="modal-title" > <a style="color: #dda600;" ><b id="modal-title">小計 : </b> <b id="Subtotal">0</b></a></h4>
+
 					</div>
-					
-					
-					</div>
-				<!--<div class="row justify-content-center pb-4" data-shuffle="item" data-groups="pasta"><div class="col-lg-2 mx-auto text-left"><a class="product-media" style="display: flex; justify-content: center;"><img loading="lazy" class="lazyloaded" style="width:100%; max-height: 200px; object-fit: contain; object-position: center " data-src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/props87.png" alt="" src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/props87.png"></a></div><div class="col-xs-12  col-lg-4 mx-auto"><div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">價格: </b> <span class="extra-field-value">600  / 組<span></span></span></div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">備註: </b> <span class="extra-field-value">魔力值回復約200點。<span></span></span></div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">現貨: </b> <span class="extra-field-value">0<span></span></span></div></div><div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">料理</div></div><div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" href="https://lin.ee/BNuxeQG"></a></div></div>-->
              </div>
+			 
              <div class="modal-footer">
+				
                  <button type="button" class="btn btn-default" data-dismiss="modal">取消
                  </button>
-                 <button type="button" class="btn btn-primary">
+                 <button type="button" class="btn btn-primary"  onclick="addcart()" id="addcartbtn" >
                      確認
                  </button>
              </div>
          </div><!-- /.modal-content -->
      </div><!-- /.modal -->
  </div>
- 
  
 
  
@@ -544,7 +574,37 @@
 
  
 	 </script>
- <a href="https://lin.ee/BNuxeQG"  class="super-button" target="_blank"  >
+
+
+
+<div class="modal fade" id="myModal_cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" > <a style="color: #fbbc04;" ><b>購物車</b></a></h3>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+			</div>
+			<div class="modal-body">
+			   <div class="container"> 
+				</div>
+ 
+			   <!--<div class="row justify-content-center pb-4" data-shuffle="item" data-groups="pasta"><div class="col-lg-2 mx-auto text-left"><a class="product-media" style="display: flex; justify-content: center;"><img loading="lazy" class="lazyloaded" style="width:100%; max-height: 200px; object-fit: contain; object-position: center " data-src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/props87.png" alt="" src="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/props87.png"></a></div><div class="col-xs-12  col-lg-4 mx-auto"><div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">價格: </b> <span class="extra-field-value">600  / 組<span></span></span></div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">備註: </b> <span class="extra-field-value">魔力值回復約200點。<span></span></span></div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">現貨: </b> <span class="extra-field-value">0<span></span></span></div></div><div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">料理</div></div><div class="col-xs-12 col-lg-2 mx-auto"><a target="_blank" class="product-media" style="display: flex; justify-content: center;" href="https://lin.ee/BNuxeQG"></a></div></div>-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消
+				</button>
+				<button type="button" class="btn btn-primary">
+					確認
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+
+ <a  class="super-button"   data-toggle="modal" data-target="#myModal_cart" onclick="">
 	 <img width="40px" height="40px" src="image/cart_icon.png">
  </a>
  
