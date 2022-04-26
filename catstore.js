@@ -542,6 +542,11 @@ function openNav() {
             
         }
         
+        function showcart()
+        {
+            var x = document.cookie;
+            alert(x);
+        }
         
     }
 
