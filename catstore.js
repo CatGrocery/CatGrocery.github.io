@@ -98,6 +98,7 @@ function showHint(str)
                                     {
                                         for (var i = 1; i < obj.length; i ++ ) 
                                         {//
+                                        html  +='<div id="' +  obj[i].data[8] + '">';
                                         html  +='<div class="row justify-content-center pb-4" data-shuffle="item" data-groups="pasta"><div class="col-lg-2 mx-auto text-left"><a  class="product-media" style="display: flex; justify-content: center;"><img loading="lazy" class="lazyload " style="width:100%; max-height: 200px; object-fit: contain; object-position: center " src="image/'+obj[i].data[1]+'" alt=""></a></div>';
                                         html  += '<div class="col-xs-12  col-lg-4 mx-auto"><h3> <a style="color: #fbbc04" >' +obj[i].data[8] +'&emsp;'+ obj[i].data[0] + '</a></h3>';//
                                         html  +='<div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">價格: </b> <span class="extra-field-value">'+obj[i].data[4]+ '<span>';
