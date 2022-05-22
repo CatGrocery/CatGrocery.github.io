@@ -103,7 +103,7 @@ function showHint(str)
                                         html  +='<div class="extra-fields-all"> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">價格: </b> <span class="extra-field-value">'+obj[i].data[4]+ '<span>';
                                         html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">備註: </b> <span class="extra-field-value">'+obj[i].data[5]+'<span>';
                                         html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">現貨: </b> <span class="extra-field-value">'+obj[i].data[6]+'<span>';
-                                        html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">販店價 </b> <span class="extra-field-value">'+obj[i].data[10]+'<span>'+'</div></div>';
+                                        html  +='</div> <div class="extra-field" style="background-color: ; color: ; font-size: 14px; padding-left: 0px ;"><b class="extra-field-column-name">販店價: </b> <span class="extra-field-value">'+obj[i].data[10]+'<span>'+'</div></div>';
                                         html  +='<div style="background-color: #e9ecf0; color: #3a3a3a;; margin-right: 5px;" class="badge">'+obj[i].data[7]+'</div></div>';
                                         if(obj[i].data[2] == "立即購買")
                                         {
