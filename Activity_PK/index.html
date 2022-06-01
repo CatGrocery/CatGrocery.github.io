@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <title>喵喵教PK大賽</title>
+ <meta name="description" content="">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link href="https://www.sheet2site.com/assets/css/page.css" rel="stylesheet">
+ <meta property="og:title" content="小貓雜貨店">
+ <meta property="og:description" content="">
+ <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/cover.jpg">
+ <meta property="og:url" content="">
+ <meta name="twitter:title" content="小貓雜貨店">
+ <meta name="twitter:description" content="">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:image:src" content="https://cdn.jsdelivr.net/gh/Faxey/Cat_Store/props/cover.jpg">
+ 
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51392658-21"></script>
+ <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="catstore.js"></script>
+ <link rel="stylesheet" href="catstore.css">
+ 
+
+ 
+
+
+ <script type="text/javascript">
+		 //Global Variable
+		 var globalPage = 1;
+	 </script>
+
+ <link rel="shortcut icon" href="img/webicon.png" type="image/x-icon">
+ <link rel="icon" href="img/webicon.png" type="image/x-icon">
+ <script src="https://sheet2site.com/assets/js/page.min.js"></script>
+ <script src="https://sheet2site.com/assets/js/v3/common_functions.js"></script>
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+ </head>
+ <body class="demo-header "  onload="webload();">
+<header>
+	<div data-provide="shuffle" class="topchoose fixed-top">
+	<ul class="filters-bar nav nav-center nav-bold nav-uppercase nav-pills" data-shuffle="filter">
+		<li class="nav-item pl-1">
+		<a  class="nav-link active" name="filters" id="announcement" onclick="choosefilters(this);maincanvaChoose(this);">
+		最新資訊
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link" name="filters" id="rule" onclick="choosefilters(this);maincanvaChoose(this);">
+		比賽規則
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link "  name="filters" id="reward"  onclick="choosefilters(this);maincanvaChoose(this);">
+		比賽獎品
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters"  id="method" onclick="choosefilters(this);maincanvaChoose(this);">
+		報名辦法
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters"  id="member" onclick="choosefilters(this);maincanvaChoose(this);ShowMember();">
+		參賽名單
+		</a>
+		</li>
+		<li class="nav-item pl-1">
+		<a  class="nav-link " name="filters"  id="score" onclick="choosefilters(this);maincanvaChoose(this);">
+		比賽賽程
+		</a>
+		</li>
+		<style>
+					.filters-bar {
+						
+						margin: auto;
+						background-color: #fff;
+						border-radius: 4px;
+						padding-top: 15px;
+						padding-bottom: 15px;
+						box-shadow: 1px 1px 14px -4px rgba(0, 0, 0, 0.4);
+					}
+				</style>
+		<br>
+		</ul>
+	</div>
+</header>
+<!-----------側邊選單(始)---------------->
+
+
+<!-----------側邊選單(末)---------------->
+ 
+ <header id="maincanvas2" style="transition: 0.5s;" data-overlay="2"  loading="lazy" data-background-image="img/img01.png" class="lazyload t-white " >
+	
+
+<div class="container mt-8 mb-8 text-center">
+
+ <div class="row h-100">
+ <div class="col-lg-8 mx-auto align-self-center">
+ <h1 class=" display-3 my-6 text-white " style="text-shadow: 1px 1px 1px rgba(0,0,0,0.35);"><strong class="header-text">喵喵教 <br>第四屆PK大賽</strong></h1>
+ <p class="lead-3 header-p-text"></p>
+ 
+ </div>
+ </div>
+ </div>
+ </header>
+ 
+
+ <div id="maincanvas" style="transition: 0.5s;">
+ 
+
+
+<!--------------------最新公告---------------------------->
+<div class="container maincanva"  id="canva-announcement">
+	
+	<header class="section-header"></header>
+
+
+
+	<mat-card _ngcontent-xcq-c264="" appmaterialelevation="" class="mat-card mat-focus-indicator mat-elevation" style="background-color: rgb(255, 255, 255);">
+	<div data-provide="shuffle">
+	<div class="accordion shadow-5" data-shuffle="list" id="accordion-job">
+	<div id="announcement_status"></div>
+
+	</div>
+	</div>
+	</mat-card>
+	<br><br><br><br><br>
+	</div>
+	
+
+<!--------------------最新公告---------------------------->
+
+<!---------------------------------------------------------商品一覽(始)--------------------------------------------------------------->
+ <section class="section overflow-hidden maincanva" id="canva-rule" >
+<!---------------------------------------------------------加入好友訂購(始)---------------------------------------------------------------
+	<section class="section overflow-hidden" style="margin-top: -60px;">
+		<div class="container-fluid">
+		<div class="row gap-y align-items-center">
+		<div class="col-md-5 mx-auto text-center">
+		<a target="_blank" href="https://lin.ee/BNuxeQG">
+		<img style="max-height: 300px;" src="https://qr-official.line.me/sid/M/068xzykb.png" alt="..." >
+		</a>
+		</div>
+		<div class="col-md-4 mx-auto">
+		<h3>QR Code</h3>
+		<br>
+		<p>快來加入好友訂購吧！</p>
+		<br>
+		<a target="_blank" href="https://lin.ee/BNuxeQG">
+		<button class="btn buttonsponoredsection px-8" style="background-color: #fbbc04; color: #ffffff;"> 加入好友
+		</button>
+		</a>
+		</div>
+		</div>
+		</div>
+		</section>
+-------------------------------------------------------加入好友訂購(末)--------------------------------------------------------------->
+<div class="">
+	<header class="section-header mt-7 mb-4">
+	<div class="titletext" >
+	<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">PK大賽規則</h1>
+	</div>
+	<hr>
+	<div class="p1">
+		<h3>
+		參賽費用
+		</h3>
+		<ul>
+			<li class="licontent">每組隊伍6萬魔幣</li>
+			<li class="licontent">請於填寫報名表單後盡速繳交</li>
+		</ul>
+
+		<hr>
+		<h3>
+			隊伍限制
+		</h3>
+		<ol>
+			<li class="licontent">本次比賽採組別報名制 (需組滿5人可備選1人)</li>
+			<li class="licontent">角色等級無限制</li>
+			<li class="licontent">隊伍中角色職業不可重複</li>
+		</ol>
+
+		<hr>
+		<h3>
+			比賽限制
+		</h3>
+		<ol>
+			<li class="licontent">隊伍場上寵物不得重複(場上定義:場上存活的寵物)</li>
+			<li class="licontent">隊伍場上僅可使用2隻魔寵(魔寵定義:使用魔法攻擊技能之寵物)</li>
+			<li class="licontent">戰鬥中可更換寵物</li>
+			<li class="licontent">不可使用藥水</li>
+			<li class="licontent">不可使用替身娃娃</li>
+			<li class="licontent">僅可使用人型系變身卡</li>
+			<li class="licontent">若違規以上任一條規則該場次判定為輸，有爭議以現場裁判判定為主，蓄意累犯取消參賽資格且不退費參賽費用</li>
+		</ol>
+
+		<hr>
+		<h3>
+			比賽制度
+		</h3>
+		<h5>
+			本賽事共兩階段，兩階段採不同比賽賽制。
+		</h5>
+		<br>
+		<h4>初賽：</h4>
+		<h5>
+			此階段採單淘汰賽制，主辦單位將採隨機方式匹配比賽對手，每組隊伍之間只進行一場比賽，獲勝方即可進行下一輪的比賽，最後取前8名進行決賽。
+		</h5>
+		<h5 style="color: rgb(95, 0, 0);">
+			*賽制將視隊伍數報名數調整單淘汰賽制或雙淘汰賽制
+		</h5>
+
+		<br>
+		<h4>決賽：</h4>
+		<h5>
+			此階段採淘汰賽制，每兩組隊伍之間採三戰兩勝制，最後排名依照比賽結果進行排序。
+		</h5>
+		<hr><br>
+		<div class="titletext" >
+			<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">比賽前相關注意事項</h1>
+		</div>
+		<hr>
+		<ul>
+			<li class="licontent">賽程表將於 2022.06.25公布於此網。</li>
+			<li class="licontent">請於參賽隊伍比賽前15分鐘進行報到及檢錄，如於該場次比賽前5分鐘未報到，視狀況將該場次延後。</li>
+			<li class="licontent">比賽前請事先將隊伍所有角色更換成該職業稱號。</li>
+		</ul>
+	</div>
+	
+	
+	</header>
+	<br>
+</div>
+
+ </section>
+<!---------------------------------------------------------商品一覽(末)--------------------------------------------------------------->
+
+
+
+
+<section class="section overflow-hidden maincanva" id="canva-reward" >
+	<div class="">
+		<header class="section-header mt-7 mb-4">
+		<div class="titletext" >
+		<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">比賽獎項</h1>
+	</div>
+		
+
+
+		<div class="row gap-y gap-2" id="addcardshere" data-shuffle="list">
+			<div style="min-height: 400px;" class="col-md-4 col-xl-3 d-flex align-items-stretch" data-shuffle="item">
+			<div style="border-bottom: 2px solid #ddd; padding-top: 20px; " class="product-4 mb-3 w-100">
+			<div style="padding-top: 10px;" class="product-detail">
+			<h6 style="color: #111; font-weight: 600 !important;font-size: 30px;">第一名</h6>
+			<hr>
+			<ul>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+			</ul>
+			</div>
+			</div>
+			</div>
+
+
+			<div style="min-height: 400px;" class="col-md-4 col-xl-3 d-flex align-items-stretch" data-shuffle="item">
+			<div style="border-bottom: 2px solid #ddd; padding-top: 20px; " class="product-4 mb-3 w-100">
+			<div style="padding-top: 10px;" class="product-detail">
+			<h6 style="color: #111; font-weight: 600 !important;font-size: 30px;">第二名</h6>
+			<hr>
+			<ul>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+			</ul>
+			</div>
+			</div>
+			</div>
+
+			<div style="min-height: 400px;" class="col-md-4 col-xl-3 d-flex align-items-stretch" data-shuffle="item">
+			<div style="border-bottom: 2px solid #ddd; padding-top: 20px; " class="product-4 mb-3 w-100">
+			<div style="padding-top: 10px;" class="product-detail">
+			<h6 style="color: #111; font-weight: 600 !important;font-size: 30px;">第三名</h6>
+			<hr>
+			<ul>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+			</ul>
+			</div>
+			</div>
+			</div>
+
+			<div style="min-height: 400px;" class="col-md-4 col-xl-3 d-flex align-items-stretch" data-shuffle="item">
+			<div style="border-bottom: 2px solid #ddd; padding-top: 20px; " class="product-4 mb-3 w-100">
+			<div style="padding-top: 10px;" class="product-detail">
+			<h6 style="color: #111; font-weight: 600 !important;font-size: 30px;">第四名</h6>
+			<hr>
+			<ul>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+				<li class="licontent">規劃中</li>
+			</ul>
+			</div>
+			</div>
+			</div>
+			
+			
+			</div>
+		
+
+			<section class="section overflow-hidden">
+				<hr>
+				<div class="row gap-y align-items-center">
+				<div class="col-md-5 mx-auto text-center">
+				<img style="height: 120px;width: auto;" src="img/img03.png" alt="..." >
+				</div>
+				<div class="col-md-4 mx-auto">
+				<h3 style="color: #111;">參加獎</h3>
+				<br>
+				<h5>參賽的每組隊伍可獲得</h5>
+				<h5>魅惑的哈密瓜麵包 15組</h5>
+				</div>
+				</div>
+			</section>
+
+			<br><br><br>
+
+
+
+			<div class="titletext" >
+				<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">比賽獎品贊助名單</h1>
+			</div>
+			<ul>
+				<li class="licontent">喵喵教</li>
+				<li class="licontent">湯</li>
+				<li class="licontent">犬七總招</li>
+				<li class="licontent">Angel喵喵</li>
+			</ul>
+		</header>
+		<br>
+	</div>
+</section>
+
+
+<section class="section overflow-hidden maincanva" id="canva-method" style="text-align:center" >
+	<header class="section-header mt-7 mb-4">
+
+	<div class="titletext" >
+		<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">報名時間</h1>
+	</div>
+	<hr>
+	<h5>報名時間 : 即日起 ~ 6/25  23:59 逾期不候</h5>
+	<h5 style="color: rgb(204, 1, 1);">※若需取消報名與退費，請於12/26  20:00前聯絡 @摩羯-艾爾</h5>
+	<br><br><br>
+	
+	
+	<div class="titletext" >
+		<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">步驟1 : 請先填寫以下表單</h1>
+	</div>
+	<hr>
+	<mat-card _ngcontent-xcq-c264="" appmaterialelevation="" class="mat-card mat-focus-indicator mat-elevation" style="background-color: rgb(255, 255, 255);">
+	<div data-provide="shuffle">
+	<div class="accordion shadow-5" data-shuffle="list" id="accordion-job">
+	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexZjTtkNeBet1H5T3aNSQUQHQvoOlSw-Ew9o6b9JIJM0_0MA/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+	</div>
+	</div>
+	</mat-card>
+	<br><br><br>
+
+
+	<div class="titletext" >
+		<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">步驟2 : 繳交報名費用</h1>
+	</div>
+	<hr>
+	<ul>
+		<li class="licontent">方法1 : 請在摩羯社群中 @摩羯-艾爾 ，聯絡繳交報名費用，報名費用繳交後才算完成報名。</li>
+		<li class="licontent">方法2 : 加入小貓雜貨官方LINE帳號，並聯絡約繳交報名費用，報名費用繳交後才算完成報名。</li>
+	</ul>
+	<br>
+	<h5 >社群名稱 : 摩羯討論群永恆初心</h5>
+	<h5 >社群連結 : <a target="_blank" href="https://line.me/ti/g2/Z3cIA9um8Cs72h9ohJnK9tEvyY26SSBrftRj4w?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" style="color: rgb(45, 45, 212);">點我加入</a></h5>
+	<h5 >小貓雜貨店官方LINE帳號 : </h5>
+	<a href="https://lin.ee/BNuxeQG"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" style="height:30px ;float: left;" border="0"></a>
+
+	</header>
+</section>
+
+
+<section class="section overflow-hidden maincanva" id="canva-member" style="text-align:center" >
+
+	<header class="section-header mt-7 mb-4">
+
+		<div class="titletext" >
+			<h1 style="color: rgb(255, 255, 255); font-family: monospace; font-weight:800;">參賽者名單</h1>
+			<p style="color: white;">只顯示報名成功之參賽隊伍 (完成報名費繳交)</p>
+		</div>
+		<mat-card _ngcontent-xcq-c264="" appmaterialelevation="" class="mat-card mat-focus-indicator mat-elevation" style="background-color: rgb(255, 255, 255);">
+			<div data-provide="shuffle">
+			<div class="accordion shadow-5" data-shuffle="list" id="accordion-job">
+		<div id="member_status"></div>
+		</div>
+		</div>
+		</mat-card>
+
+	</header>
+
+</section>
+
+
+<!-------------------------還沒完成------------------------->
+<section class="section overflow-hidden maincanva" id="canva-score" style="text-align:center" ><b style="font-size: 50px;">暫未公布，敬請期待</b></section>
+
+
+
+
+
+
+
+
+<!---------------------------------------------------------底部加入好友(始)--------------------------------------------------------------
+ <section class="section overflow-hidden">
+
+ <div class="row gap-y align-items-center">
+ <div class="col-md-4 mx-auto">
+ <p style="font-size: 15px;font-weight: 400;">主辦單位 : 喵喵教<br>協辦單位 : 小貓雜貨店<br>主辦單位保有活動相關事物之更改權~<br>最後更新時間 : 2021/12/26</p>
+ <br>
+ <a target="_blank" href="https://lin.ee/BNuxeQG">
+ <button class="btn buttonsponoredsection px-8" style="background-color: #fbbc04; color: #ffffff;"> 馬上報名
+ </button>   
+ </a>
+ </div>
+ </div>
+ </section>
+ -------------------------------------------------------底部加入好友(末)--------------------------------------------------------------->
+
+ <footer style="background-color: rgb(104, 104, 235);">
+	<br>
+    <b><p style="text-align: center;color: #fff;">主辦單位 : 喵喵教</p>
+	<p style="text-align: center;color: #fff;line-height: 2px;">協辦單位 : 小貓雜貨店</p>
+	<p style="text-align: center;color: #fff;">主辦單位保有活動相關事物之更改權</p>
+	<p style="text-align: center;color: #fff;">最後更新時間 : 2022/6/1</p></b>
+	<br>
+    <!-- A footer for the page. -->
+  </footer>
+
+ <button class="js-back-to-top back-to-top" title="回到頂部">&#65085;</button>
+ <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+ 
+ 
+  
+
+
+ <script type="text/javascript">
+
+		   $(window).scroll(function() {
+			 lazyload();
+		   });
+ 
+ 
+
+		   function lazyload() {
+			 var windowHeight=windowSize().height;
+			 var scrollTop=$(window).scrollTop();
+			 $('.lazyload').each(function() {
+			   var edge=$(this).offset().top;
+			   if(
+ 
+				 (
+				   (edge+300)
+					 >=
+				   scrollTop
+				 )
+ 
+				   &&
+				 (
+				   (edge)
+					 <=
+				   (scrollTop+windowHeight*2)
+				 )
+ 
+			   ) {
+				 if($(this).is(':visible')) {
+ 
+				   if($(this).data('background-image')) {
+					 $(this).css('background-image','url('+$(this).data('background-image')+')');
+				   }
+				   else if($(this).data('srcset')) {
+					 $(this).prop('srcset',$(this).data('srcset'));
+				   }
+				   else if($(this).data('src')) {
+					 $(this).prop('src',$(this).data('src'));
+				   }
+				   $(this).removeClass('lazyload').addClass('lazyloaded');
+				 }
+			   }
+			 });
+		   }
+
+
+		   function windowSize() {
+			 var e = window, a = 'inner';
+			 if (!('innerWidth' in window )) {
+				 a = 'client';
+				 e = document.documentElement || document.body;
+			 }
+			 return { width : e[ a+'Width' ] , height : e[ a+'Height' ] };
+		   }
+
+		   $(function() {
+			 lazyload();
+		   });
+
+ 
+	 </script>
+
+
+
+
+
+ <style>
+	 .super-button {display: block}
+	 </style>
+
+</div>
+ </body>
+ 
+ </html>
