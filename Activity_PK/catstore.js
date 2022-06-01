@@ -581,7 +581,7 @@ function ShowMember()
                                 
                                 for (var i = 0; i < obj.length; i ++ ) 
                                     {
-                                        if(obj[i].data[0] != "")
+                                        if(obj[i].data[0] == '報名成功')
                                         {
                                             html +='<div class="w-100 jobboard-card-child" data-shuffle="item"><h6 class="card-title" style="background-color: rgb(243, 238, 232)"><a data-toggle="collapse" class="d-flex align-items-center collapsed" href="#member'+obj[i].data[1]+'" aria-expanded="false"><span class="mr-5"><img loading="lazy" class="avatar avatar-s lazyloaded" src="img/icon02.gif" alt=""></span><span class="mr-auto w-60"><strong style="font-size: 20px;float: left;">'+obj[i].data[2];
                                             html +='</strong><br><br><div style="background-color: #e3e6eb; color: #3a3a3a;; margin-right: 5px;float: left;" class="badge">隊伍編號：'+obj[i].data[1];
