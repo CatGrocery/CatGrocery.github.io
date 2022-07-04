@@ -296,7 +296,7 @@ function ShowModal(btn)
                 document.getElementById("modal-image").src = "image/" +ShowHintIteam[i][1];
                 document.getElementById("modal-filters").innerHTML = ShowHintIteam[i][7];
                 document.getElementById("modal-price").innerHTML = ShowHintIteam[i][4];
-                document.getElementById("modal-remark-gem").innerHTML = "<b>武器效果 :</b>"  +ShowHintIteam[i][5] +"<br><b>防具效果 :</b>"  +ShowHintIteam[i][5] ;
+                document.getElementById("modal-remark-gem").innerHTML = "<b>武器效果 :</b>"  +ShowHintIteam[i][3] +"<br><b>防具效果 :</b>"  +ShowHintIteam[i][5] ;
                 document.getElementById("modal-remark").innerHTML ="";
                 document.getElementById("modal-spotgoods").innerHTML = ShowHintIteam[i][6];
                 document.getElementById("oder-num").value = 0 ;
